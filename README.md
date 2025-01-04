@@ -52,7 +52,6 @@ A comprehensive Blog REST API developed with Spring Boot, allowing users to crea
 - **Database**: MySQL
 - **ORM**: Hibernate
 - **Validation**: Hibernate Validator
-- **Testing**: JUnit5
 - **API Documentation**: Swagger
 - **File Handling**: Custom File Service
 
