@@ -64,7 +64,7 @@ A comprehensive Blog REST API developed with Spring Boot, allowing users to crea
    ```
 2. Navigate to the project directory:
    ```bash
-   cd blog-rest-api
+   cd blog-app-apis
    ```
 3. Configure the database in `application.properties`:
    ```
