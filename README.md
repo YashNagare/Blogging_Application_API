@@ -79,31 +79,32 @@ A comprehensive Blog REST API developed with Spring Boot, allowing users to crea
 ## API Endpoints
 
 
-| **Category**       | **Method** | **Endpoint**                                      | **Description**                                           | **Auth Required**          |
+| **Category**        | **Method** | **Endpoint**                                     | **Description**                                           | **Auth Required**          |
 |---------------------|------------|--------------------------------------------------|-----------------------------------------------------------|----------------------------|
-| **Authentication**  | POST       | `/api/auth/login`                                | Authenticate and receive JWT                              | No                         |
-|                     | POST       | `/api/auth/register`                             | Register a new user                                       | No                         |
-| **User**            | GET        | `/api/users/all`                                 | Get all users                                             | Yes (Admin)               |
-|                     | PUT        | `/api/users/updateUser/{id}`                    | Update user                                               | Yes                       |
-|                     | DELETE     | `/api/users/deleteUser/{id}`                    | Delete user                                               | Yes (Admin or User)       |
-|                     | GET        | `/api/users/{id}`                                | Get specific User                                         | Yes (Admin)               |
-|                     | PATCH      | `/api/users/update/specific/{id}`               | Update specific field                                     | Yes (Admin or User)       |
-| **Posts**           | GET        | `/api/post/all?pageNumber=1&pageSize=3`         | Get all posts (with pagination, sorting, and searching)   | No                         |
-|                     | POST       | `/api/user/{userID}/category/{categoryID}`      | Create a new post                                         | Yes                       |
-|                     | PUT        | `/api/post/update/{id}`                         | Update a post                                             | Yes                       |
-|                     | DELETE     | `/api/post/delete/{id}`                         | Delete a post                                             | Yes (Admin)               |
-|                     | GET        | `/api/postBy/category/{id}?pageNumber=1&pageSize=2` | Get posts by category with pagination                     | No                         |
-|                     | GET        | `/api/postBy/author/{id}`                       | Get posts by author                                       | No                         |
-|                     | GET        | `/api/post/{id}`                                | Get post by ID                                            | No                         |
-|                     | GET        | `/api/post/search/{title}`                      | Get post by title                                         | No                         |
-|                     | PUT        | `/api/post/upload/image/{postID}`               | Update post image                                         | Yes                       |
-| **Categories**      | GET        | `/api/category/all`                             | Get all categories                                        | No                         |
-|                     | POST       | `/api/category/create`                          | Create a new category                                     | Yes (Admin)               |
-|                     | PUT        | `/api/category/update/{id}`                     | Update a category                                         | Yes (Admin)               |
-|                     | DELETE     | `/api/category/delete/{id}`                     | Delete a category                                         | Yes (Admin)               |
-|                     | GET        | `/api/category/byId/{id}`                       | Get categories by ID                                      | No                         |
-| **Comments**        | POST       | `/api/comment/add/post/{id}`                    | Add a comment to a post                                   | Yes                       |
-|                     | DELETE     | `/api/comment/delete/{id}`                      | Delete a comment                                          | Yes                       |
+| **Authentication**  | POST       | `/api/v1/auth/login`                             | Authenticate and receive JWT                              | No                         |
+|                     | POST       | `/api/v1/auth/register`                          | Register a new user                                       | No                         |
+| **User**            | GET        | `/api/users/`                                    | Get all users                                             | No                         |
+|                     | PUT        | `/api/users/{uid}`                               | Update user                                               | Yes                        |
+|                     | DELETE     | `/api/users/{uid}`                               | Delete user                                               | Yes (Admin)                |
+|                     | GET        | `/api/users/{uid}`                               | Get specific User                                         | No                         |
+|                     | POST       | `/api/users/`                                    | Create user                                               | Yes                        |
+| **Posts**           | PUT        | `/api/posts/{postId}`                            | Update a post                                             | Yes                        |
+|                     | DELETE     | `/api/posts/{postId}`                            | Delete a post                                             | Yes (Admin)                |
+|                     | POST       | `/api/user/{userId}/category/{categoryId}/posts` | Create a new post                                         | Yes                        |
+|                     | POST       | `/api/post/image/upload/{postId}`                | Update post image                                         | Yes                        |
+|                     | GET        | `/api/user/{userId}/posts`                       | Get posts by author                                       | No                         |
+|                     | GET        | `/api/posts`                                     | Get all posts                                             | No                         |
+|                     | GET        | `/api/posts/search/{title}`                      | Get post by title                                         | No                         |
+|                     | GET        | `/api/post/{postId}`                             | Get post by ID                                            | No                         |
+|                     | GET        | `/api/post/image/{imageName}`                    | Get post image                                            | No                         |
+|                     | GET        | `/api/category/{categoryId}/posts`               | Get post by category                                      | No                         |
+| **Categories**      | GET        | `/api/categories/{id}`                           | Get categories by ID                                      | No                         |
+|                     | PUT        | `/api/categories/{id}`                           | Update a category                                         | Yes                        |
+|                     | DELETE     | `/api/categories/{id}`                           | Delete a category                                         | Yes                        |
+|                     | GET        | `/api/categories/`                               | Get all categories                                        | No                         |
+|                     | POST       | `/api/categories/`                               | Create a new category                                     | Yes                        |
+| **Comments**        | POST       | `/api/post/{id}/comments`                        | Add a comment to a post                                   | Yes                        |
+|                     | DELETE     | `/api/comments/{id}`                             | Delete a comment                                          | Yes                        |
 
 ---
 
